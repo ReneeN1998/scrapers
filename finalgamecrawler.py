@@ -2,9 +2,6 @@ import pandas as pd
 from selenium import webdriver
 import time
 from selenium.webdriver.common.action_chains import ActionChains
-chrome_options.add_argument("no-sandbox")
-chrome_options.add_argument("--disable-extensions")
-chrome_options.add_argument("--headless")
 
 url_list=[]
 #getting all the urls
