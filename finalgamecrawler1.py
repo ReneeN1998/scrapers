@@ -43,7 +43,7 @@ with open ('testlinks10.csv') as urls:
     
         time.sleep(1)
         try: 
-            title = driver.find_element(By.XPATH('.//*[@id="appHubAppName"]').text
+            title = driver.find_element(By.XPATH('.//*[@id="appHubAppName"]')).text
         except:
             title = ''
         try: 
