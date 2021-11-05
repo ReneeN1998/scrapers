@@ -12,7 +12,7 @@ url_list=[]
 with open ('testlinks10.csv') as urls:
     for url in urls:
         # create driver object
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome(""/home/test/chromedriver", options=chrome_options)
         time.sleep(1)
         # asses webpage
         driver.get("https://"+url.rstrip())
