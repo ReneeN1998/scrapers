@@ -3,6 +3,8 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
@@ -41,7 +43,7 @@ with open ('testlinks10.csv') as urls:
     
         time.sleep(1)
         try: 
-            title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
+            title = driver.find_element(By.XPATH('.//*[@id="appHubAppName"]').text
         except:
             title = ''
         try: 
