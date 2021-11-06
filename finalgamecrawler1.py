@@ -19,6 +19,7 @@ with open ('testlinks10.csv') as urls:
         driver.get("https://"+url.rstrip())
         time.sleep(3)
         driver.maximize_window()
+        time.sleep(3)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
@@ -27,6 +28,7 @@ with open ('testlinks10.csv') as urls:
             print('probably accepted the cookie already!')
         # Get through the agecheck
         try:
+            time.sleep(3)
             day = driver.find_element_by_id('ageDay')
             month = driver.find_element_by_id('ageMonth')
             year = driver.find_element_by_id('ageYear')
@@ -104,10 +106,12 @@ with open ('testlinks10.csv') as urls:
             downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
             actions = ActionChains(driver)
             actions.click(downbutton)
+            time.sleep(3)
             for i in range(1000):
                 actions.perform()
             downbutton = ''
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
+            time.sleep(3)
         except: 
             update_count = ''
                
