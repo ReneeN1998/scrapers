@@ -3,6 +3,7 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
@@ -39,6 +40,11 @@ with open ('testlinks10.csv') as urls:
             month.send_keys('februari')
             year.send_keys('2000')
             time.sleep(5)
+            driver.sendKeys(Keys.DOWN)
+            driver.sendKeys(Keys.DOWN)
+            driver.sendKeys(Keys.DOWN)
+            driver.sendKeys(Keys.DOWN)
+            driver.sendKeys(Keys.DOWN)
             link = driver.find_element_by_link_text('Pagina weergeven')
             link.click()
         except:
