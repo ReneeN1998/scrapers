@@ -18,6 +18,7 @@ with open ('testlinks10.csv') as urls:
         time.sleep(3)
         # asses webpage
         driver.get("https://"+url.rstrip())
+        driver.set_window_size(1920, 1080)
         time.sleep(5)
         driver.maximize_window()
         time.sleep(5)
