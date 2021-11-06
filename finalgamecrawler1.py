@@ -23,14 +23,12 @@ with open ('testlinks10.csv') as urls:
         time.sleep(3)
         # asses webpage
         driver.get("https://"+url.rstrip())
-        driver.set_window_size(1920, 1080)
-        time.sleep(5)
         driver.maximize_window()
-        time.sleep(5)
+        time.sleep(1)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(5)
+            time.sleep(1)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -38,19 +36,15 @@ with open ('testlinks10.csv') as urls:
             day = driver.find_element_by_id('ageDay')
             month = driver.find_element_by_id('ageMonth')
             year = driver.find_element_by_id('ageYear')
-            driver.maximize_window()
-            time.sleep(5)
             day.send_keys('10')
             month.send_keys('April')
             year.send_keys('2000')
-            time.sleep(5)
+            time.sleep(1)
             link = driver.find_element_by_css_selector('a.btnv6_blue_hoverfade.btn_medium')
             link.click()
             print('Age check passed')
         except:
             print('No age restriction')
-    
-        time.sleep(5)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
@@ -107,21 +101,20 @@ with open ('testlinks10.csv') as urls:
             number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
-       # try:
-        #    link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
-       #     link2.click()
-       #     time.sleep(3) 
-       #     downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
-      #      actions = ActionChains(driver)
-      #      actions.click(downbutton)
-      #      time.sleep(3)
-      #      for i in range(1000):
-      #          actions.perform()
-      #      downbutton = ''
-      #      update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
-      #      time.sleep(3)
-      #  except: 
-      #      update_count = ''
+        try:
+            link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
+            link2.click()
+            time.sleep(1) 
+            downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
+            actions = ActionChains(driver)
+            actions.click(downbutton)
+            time.sleep(1)
+            for i in range(1000):
+                actions.perform()
+            downbutton = ''
+            update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
+        except: 
+            update_count = ''
                
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
@@ -132,7 +125,7 @@ with open ('testlinks10.csv') as urls:
                 'number_recent_reviews': number_recent_reviews, 
                 'genre': genre,
                 'release_date': release_date, 
-                'tags': tags,# 'update_count': update_count
+                'tags': tags, 'update_count': update_count
                 }
         url_list.append(url)
         driver.quit()
