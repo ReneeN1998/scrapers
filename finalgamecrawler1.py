@@ -45,6 +45,7 @@ with open ('testlinks10.csv') as urls:
             print('Age check passed')
         except:
             print('No age restriction')
+        time.sleep(3)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
