@@ -49,7 +49,7 @@ with open ('testlinks10.csv') as urls:
             driver.sendKeys(Keys.DOWN)
             driver.sendKeys(Keys.DOWN)
             driver.sendKeys(Keys.DOWN)
-            link = driver.find_element_by_link_text('Pagina weergeven')
+            link = driver.find_element_by_link_text('View Page')
             link.click()
         except:
             print('No age restriction')
