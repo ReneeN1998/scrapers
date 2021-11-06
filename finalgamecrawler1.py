@@ -3,18 +3,19 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
+s = Service(ChromeDriverManager().install())
  
 url_list=[]
 #getting all the urls
 with open ('testlinks10.csv') as urls:
     for url in urls:
         # create driver object
-        driver = webdriver.Chrome("/home/test/chromedriver", options=chrome_options)
+        driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options, service=s)
         time.sleep(1)
         # asses webpage
         driver.get("https://"+url.rstrip())
@@ -43,7 +44,7 @@ with open ('testlinks10.csv') as urls:
     
         time.sleep(1)
         try: 
-            title = driver.find_element(By.XPATH('.//*[@id="appHubAppName"]')).text
+            title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
             title = ''
         try: 
@@ -75,7 +76,7 @@ with open ('testlinks10.csv') as urls:
         except: 
             recent_review_summary = ''
         try: 
-            number_recent_reviews = driver.find_element_by_xpath('.//*[@id="userReviews"]/div[1]/div[2]/span[2]').text
+            number_recent_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_recent_section"]/div[1]/div/span[2]').text
         except:
             number_recent_reviews = ''
         try: 
@@ -95,37 +96,22 @@ with open ('testlinks10.csv') as urls:
         except: 
             alltime_reviews_summary = ''
         try: 
-            number_alltime_reviews = driver.find_element_by_xpath('.//*[@id="userReviews"]/div[2]/div[2]/meta[1]').text
+            number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
-        try: 
-            link2 = driver.find_element_by_xpath('//*[@id="tabletGrid"]/div[1]/div[5]/div[2]/div[4]/div/div[2]/div[2]')
-            link2.click()
-            time.sleep(1) 
-            downbutton = driver.find_element_by_xpath('.//*[@id="tabletGrid"]/div[1]/div[5]/div[2]/div[4]/div/div[1]/div/div/div/div[1]/div/div/div[3]')
-            actions = ActionChains(driver)
-            actions.click(downbutton)
-            for i in range(1500):
-                actions.perform()
-            downbutton = ''
-            update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
-            close_button = driver.find_element_by_xpath('//*[@id="tabletGrid"]/div[1]/div[5]/div[2]/div[4]/div/div[1]/div/div/div/div[1]/div/div/div[1]')
-            close_button.click()
-        except:
-            update_count = ''
         try:
-            link3 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
-            link3.click()
-            time.sleep(1) 
+            link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
+            link2.click()
+            time.sleep(3) 
             downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
             actions = ActionChains(driver)
             actions.click(downbutton)
-            for i in range(1500):
+            for i in range(1000):
                 actions.perform()
             downbutton = ''
-            update_count2 = len(driver.find_elements_by_xpath('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
+            update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
         except: 
-            update_count2 = ''
+            update_count = ''
                
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
@@ -136,7 +122,7 @@ with open ('testlinks10.csv') as urls:
                 'number_recent_reviews': number_recent_reviews, 
                 'genre': genre,
                 'release_date': release_date, 
-                'tags': tags, 'update_count': update_count, 'update_count2': update_count2
+                'tags': tags, 'update_count': update_count
                 }
         url_list.append(url)
         driver.close()
