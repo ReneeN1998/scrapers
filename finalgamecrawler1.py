@@ -14,15 +14,15 @@ with open ('testlinks10.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
-        time.sleep(1)
+        time.sleep(3)
         # asses webpage
         driver.get("https://"+url.rstrip())
-        time.sleep(1)
+        time.sleep(3)
         driver.maximize_window()
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(1)
+            time.sleep(3)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -33,14 +33,14 @@ with open ('testlinks10.csv') as urls:
             day.send_keys('10')
             month.send_keys('februari')
             year.send_keys('2000')
-            time.sleep(1)
+            time.sleep(3)
             link = driver.find_element_by_link_text('Pagina weergeven')
             time.sleep(1)
             link.click()
         except:
             print('No age restriction')
     
-        time.sleep(1)
+        time.sleep(5)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
