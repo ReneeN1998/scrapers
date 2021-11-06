@@ -113,6 +113,7 @@ with open ('testlinks10.csv') as urls:
             for i in range(1000):
                 actions.perform()
             downbutton = ''
+            time.sleep(1)
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
         except: 
             update_count = ''
