@@ -44,7 +44,7 @@ with open ('testlinks10.csv') as urls:
             month.send_keys('February')
             year.send_keys('2000')
             time.sleep(5)
-            link = driver.find_element_by_class('btnv6_blue_hoverfade.btn_medium')
+            link = driver.find_element_by_xpath('.//*[@id="app_agegate"]/div[1]/div[3]/a[1]')
             link.click()
             print('Age check passed')
         except:
