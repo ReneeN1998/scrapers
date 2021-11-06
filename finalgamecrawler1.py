@@ -123,7 +123,7 @@ with open ('testlinks10.csv') as urls:
                 'tags': tags, 'update_count': update_count
                 }
         url_list.append(url)
-        driver.close()
+        driver.quit()
 df = pd.DataFrame(url_list)
 
 #Save data
