@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
+chrome_options.add_arguments("--window-size=1920,1080")
 
  
 url_list=[]
@@ -28,17 +29,16 @@ with open ('testlinks10.csv') as urls:
             print('probably accepted the cookie already!')
         # Get through the agecheck
         try:
-            time.sleep(5)
             day = driver.find_element_by_id('ageDay')
             month = driver.find_element_by_id('ageMonth')
             year = driver.find_element_by_id('ageYear')
+            driver.maximize_window()
             time.sleep(5)
             day.send_keys('10')
             month.send_keys('februari')
             year.send_keys('2000')
             time.sleep(5)
             link = driver.find_element_by_link_text('Pagina weergeven')
-            time.sleep(3)
             link.click()
         except:
             print('No age restriction')
