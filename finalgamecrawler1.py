@@ -3,19 +3,17 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
-s = Service(ChromeDriverManager().install())
+
  
 url_list=[]
 #getting all the urls
 with open ('testlinks10.csv') as urls:
     for url in urls:
         # create driver object
-        driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options, service=s)
+        driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
         time.sleep(1)
         # asses webpage
         driver.get("https://"+url.rstrip())
