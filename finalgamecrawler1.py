@@ -41,7 +41,7 @@ with open ('testlinks10.csv') as urls:
             driver.maximize_window()
             time.sleep(5)
             day.send_keys('10')
-            month.send_keys('februari')
+            month.send_keys('February')
             year.send_keys('2000')
             time.sleep(5)
             driver.sendKeys(Keys.DOWN)
