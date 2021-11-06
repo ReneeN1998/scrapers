@@ -17,18 +17,18 @@ with open ('testlinks10.csv') as urls:
         time.sleep(3)
         # asses webpage
         driver.get("https://"+url.rstrip())
-        time.sleep(3)
+        time.sleep(5)
         driver.maximize_window()
-        time.sleep(3)
+        time.sleep(5)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(3)
+            time.sleep(5)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
         try:
-            time.sleep(3)
+            time.sleep(5)
             day = driver.find_element_by_id('ageDay')
             month = driver.find_element_by_id('ageMonth')
             year = driver.find_element_by_id('ageYear')
@@ -37,7 +37,7 @@ with open ('testlinks10.csv') as urls:
             year.send_keys('2000')
             time.sleep(3)
             link = driver.find_element_by_link_text('Pagina weergeven')
-            time.sleep(1)
+            time.sleep(3)
             link.click()
         except:
             print('No age restriction')
