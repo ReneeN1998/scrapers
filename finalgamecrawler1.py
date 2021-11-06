@@ -44,13 +44,9 @@ with open ('testlinks10.csv') as urls:
             month.send_keys('February')
             year.send_keys('2000')
             time.sleep(5)
-            driver.sendKeys(Keys.DOWN)
-            driver.sendKeys(Keys.DOWN)
-            driver.sendKeys(Keys.DOWN)
-            driver.sendKeys(Keys.DOWN)
-            driver.sendKeys(Keys.DOWN)
-            link = driver.find_element_by_link_text('View Page')
+            link = driver.find_element_by_xpath('.//*[@id="app_agegate"]/div[1]/div[3]/a[1]/span')
             link.click()
+            print('Age check passed')
         except:
             print('No age restriction')
     
