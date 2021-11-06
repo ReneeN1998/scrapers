@@ -11,6 +11,7 @@ chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--window-size=1920x1080")
 chrome_options.add_argument("--window-position=0,0")
+chrome_options.add_argument("--incognito")
 
  
 url_list=[]
