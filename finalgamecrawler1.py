@@ -102,21 +102,21 @@ with open ('testlinks10.csv') as urls:
             number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
-        try:
-            link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
-            link2.click()
-            time.sleep(1) 
-            downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
-            actions = ActionChains(driver)
-            actions.click(downbutton)
-            time.sleep(1)
-            for i in range(1000):
-                actions.perform()
-            downbutton = ''
-            time.sleep(1)
-            update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
-        except: 
-            update_count = ''
+       # try:
+       #     link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
+       #     link2.click()
+       #     time.sleep(1) 
+       #     downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
+       #     actions = ActionChains(driver)
+       #     actions.click(downbutton)
+       #     time.sleep(1)
+       #     for i in range(1000):
+       #         actions.perform()
+       #     downbutton = ''
+       #     time.sleep(1)
+       #     update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
+       # except: 
+       #     update_count = ''
                
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
@@ -127,7 +127,7 @@ with open ('testlinks10.csv') as urls:
                 'number_recent_reviews': number_recent_reviews, 
                 'genre': genre,
                 'release_date': release_date, 
-                'tags': tags, 'update_count': update_count
+                'tags': tags,# 'update_count': update_count
                 }
         url_list.append(url)
         driver.quit()
