@@ -1,46 +1,51 @@
-title,price1,price2,discountprice,free,alltime_reviews_summary,number_alltime_reviews,developer,publisher,recent_review_summary,number_recent_reviews,genre,release_date,tags,update_count
-Counter-Strike: Global Offensive,"12,75€",,,Free to Play,Very Positive,"(5,989,159 reviews)",Valve,,Very Positive,"(77,076 reviews)","TITLE: Counter-Strike: Global Offensive
+title,price1,price2,discountprice,free,alltime_reviews_summary,number_alltime_reviews,developer,publisher,recent_review_summary,number_recent_reviews,genre,release_date,tags
+Counter-Strike: Global Offensive,"12,75€",,,Free to Play,Very Positive,"(5,989,159 reviews)",Valve,,Very Positive,"(77,213 reviews)","TITLE: Counter-Strike: Global Offensive
 GENRE: Action, Free to Play
 DEVELOPER: Valve, Hidden Path Entertainment
 PUBLISHER: Valve
-RELEASE DATE: 21 Aug, 2012",,FPS Shooter Multiplayer Competitive Action +,92
-Timberborn,,"20,99€",,,Overwhelmingly Positive,"(5,293 reviews)",Mechanistry,Mechanistry,Very Positive,"(1,790 reviews)","TITLE: Timberborn
+RELEASE DATE: 21 Aug, 2012",,FPS Shooter Multiplayer Competitive Action +
+Timberborn,,"20,99€",,,Overwhelmingly Positive,"(5,294 reviews)",Mechanistry,Mechanistry,Very Positive,"(1,790 reviews)","TITLE: Timberborn
 GENRE: Indie, Simulation, Strategy, Early Access
 DEVELOPER: Mechanistry
 PUBLISHER: Mechanistry
 RELEASE DATE: 15 Sep, 2021
-EARLY ACCESS RELEASE DATE: 15 Sep, 2021","15 Sep, 2021",Early Access City Builder Colony Sim Survival +,74
-,,,,,Very Positive,"(1,101,828 reviews)",,,,"(18,004 reviews)","TITLE: Grand Theft Auto V
+EARLY ACCESS RELEASE DATE: 15 Sep, 2021","15 Sep, 2021",Early Access City Builder Colony Sim Survival +
+Grand Theft Auto V,,,,,Very Positive,"(1,101,828 reviews)",Rockstar North,Rockstar Games,Very Positive,"(18,004 reviews)","TITLE: Grand Theft Auto V
 GENRE: Action, Adventure
 DEVELOPER: Rockstar North
 PUBLISHER: Rockstar Games
 FRANCHISE: Grand Theft Auto
-RELEASE DATE: 14 Apr, 2015","14 Apr, 2015",Open World Action Multiplayer Automobile Sim +,
-,,,,,Very Positive,"(450,715 reviews)",,,Very Positive,"(4,652 reviews)","TITLE: Warframe
+RELEASE DATE: 14 Apr, 2015","14 Apr, 2015",Open World Action Multiplayer Automobile Sim +
+Warframe,,,,Free to Play,Very Positive,"(450,723 reviews)",Digital Extremes,Digital Extremes,Very Positive,"(4,660 reviews)","TITLE: Warframe
 GENRE: Action, Free to Play
 DEVELOPER: Digital Extremes
 PUBLISHER: Digital Extremes
-RELEASE DATE: 25 Mar, 2013","25 Mar, 2013",Free to Play Looter Shooter Action Multiplayer +,
+RELEASE DATE: 25 Mar, 2013","25 Mar, 2013",Free to Play Looter Shooter Action Multiplayer +
 New World,"49,99€",,,,,"(144,904 reviews)",Amazon Games,Amazon Games,Mostly Positive,,"TITLE: New World
 GENRE: Action, Adventure, Massively Multiplayer, RPG
 DEVELOPER: Amazon Games
 PUBLISHER: Amazon Games
-RELEASE DATE: 28 Sep, 2021","28 Sep, 2021",Massively Multiplayer Open World MMORPG +,23
+RELEASE DATE: 28 Sep, 2021","28 Sep, 2021",Massively Multiplayer Open World MMORPG +
 Apex Legends™,,,,Free to Play,Very Positive,"(337,277 reviews)",Respawn Entertainment,Electronic Arts,Mostly Positive,"(18,945 reviews)","TITLE: Apex Legends™
 GENRE: Action, Adventure, Free to Play
 DEVELOPER: Respawn Entertainment
 PUBLISHER: Electronic Arts
 FRANCHISE: Apex Legends
-RELEASE DATE: 4 Nov, 2020","4 Nov, 2020",,97
-,,,,,,,,,,,,,,
+RELEASE DATE: 4 Nov, 2020","4 Nov, 2020",Free to Play Battle Royale Multiplayer Shooter +
+FINAL FANTASY XIV Online,"9,99€",,,,Very Positive,"(42,246 reviews)",Square Enix,Square Enix,Very Positive,"(1,406 reviews)","TITLE: FINAL FANTASY XIV Online
+GENRE: Massively Multiplayer, RPG
+DEVELOPER: Square Enix
+PUBLISHER: Square Enix
+FRANCHISE: FINAL FANTASY
+RELEASE DATE: 18 Feb, 2014","18 Feb, 2014",MMORPG RPG Massively Multiplayer Fantasy +
 F1® 2021,"74,99€",,,,Very Positive,"(9,409 reviews)",Codemasters,Electronic Arts,Very Positive,"(1,580 reviews)","TITLE: F1® 2021
 GENRE: Racing, Simulation, Sports
 DEVELOPER: Codemasters
 PUBLISHER: Electronic Arts
 FRANCHISE: EA Sports
-RELEASE DATE: 15 Jul, 2021","15 Jul, 2021",Racing Immersive Sim Sports Driving PvP +,17
-,,,,,Very Positive,"(389,614 reviews)",,,,,"TITLE: Dead by Daylight
+RELEASE DATE: 15 Jul, 2021","15 Jul, 2021",Racing Immersive Sim Sports Driving PvP +
+Dead by Daylight,Bundle info,,,,Very Positive,"(389,614 reviews)",Behaviour Interactive Inc.,Behaviour Interactive Inc.,Mostly Positive,"(11,360 reviews)","TITLE: Dead by Daylight
 GENRE: Action
 DEVELOPER: Behaviour Interactive Inc.
 PUBLISHER: Behaviour Interactive Inc.
-RELEASE DATE: 14 Jun, 2016","14 Jun, 2016",Horror Survival Horror Multiplayer Online Co-Op +,364
+RELEASE DATE: 14 Jun, 2016","14 Jun, 2016",Horror Survival Horror Multiplayer Online Co-Op +
