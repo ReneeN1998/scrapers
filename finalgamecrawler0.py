@@ -22,6 +22,7 @@ with open ('testlinks10.csv') as urls:
         time.sleep(3)
         # asses webpage
         driver.get("https://"+url.rstrip())
+        driver.set_window_size(1920, 1080)
         driver.maximize_window()
         time.sleep(5)
         # accept cookies, if applicable
@@ -35,6 +36,8 @@ with open ('testlinks10.csv') as urls:
             day = driver.find_element_by_id('ageDay')
             month = driver.find_element_by_id('ageMonth')
             year = driver.find_element_by_id('ageYear')
+            driver.maximize_window()
+            time.sleep(3)
             day.send_keys('10')
             month.send_keys('April')
             year.send_keys('2000')
@@ -45,7 +48,6 @@ with open ('testlinks10.csv') as urls:
             print('Age check passed')
         except:
             print('No age restriction')
-          
         time.sleep(3)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
