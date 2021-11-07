@@ -28,7 +28,7 @@ with open ('testlinks10.csv') as urls:
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(1)
+            time.sleep(2)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -45,7 +45,7 @@ with open ('testlinks10.csv') as urls:
             print('Age check passed')
         except:
             print('No age restriction')
-        time.sleep(3)
+        time.sleep(5)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
@@ -102,7 +102,7 @@ with open ('testlinks10.csv') as urls:
             number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(8)
         try:
             link3 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
             link3.click()
@@ -110,6 +110,7 @@ with open ('testlinks10.csv') as urls:
             downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
             actions = ActionChains(driver)
             actions.click(downbutton)
+            time.sleep(3)
             for i in range(1000):
                 actions.perform()
             downbutton = ''
