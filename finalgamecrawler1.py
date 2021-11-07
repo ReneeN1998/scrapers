@@ -102,6 +102,7 @@ with open ('testlinks10.csv') as urls:
         except: 
             number_alltime_reviews = ''
         try:
+            time.sleep(2)
             link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
             link2.click()
             time.sleep(3) 
@@ -114,6 +115,7 @@ with open ('testlinks10.csv') as urls:
             downbutton = ''
             time.sleep(3)
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
+            time.sleep(3)
         except: 
             update_count = ''
                
