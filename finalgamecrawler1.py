@@ -105,11 +105,11 @@ with open ('testlinks10.csv') as urls:
         try:
             link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
             link2.click()
-            time.sleep(1) 
+            time.sleep(3) 
             downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
             actions = ActionChains(driver)
             actions.click(downbutton)
-            time.sleep(1)
+            time.sleep(3)
             for i in range(1000):
                 actions.perform()
             downbutton = ''
