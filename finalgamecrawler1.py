@@ -23,7 +23,7 @@ with open ('testlinks10.csv') as urls:
         # asses webpage
         driver.get("https://"+url.rstrip())
         driver.maximize_window()
-        time.sleep(1)
+        time.sleep(3)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
