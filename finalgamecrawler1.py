@@ -45,7 +45,7 @@ with open ('testlinks10.csv') as urls:
             print('Age check passed')
         except:
             print('No age restriction')
-        time.sleep(5)
+        time.sleep(3)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
@@ -133,5 +133,5 @@ with open ('testlinks10.csv') as urls:
 df = pd.DataFrame(url_list)
 
 #Save data
-df.to_csv('9a_games.csv', index = False, encoding='utf-8')
+df.to_csv('1a_games.csv', index = False, encoding='utf-8')
 print('Finished!')
