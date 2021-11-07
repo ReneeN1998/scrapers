@@ -38,13 +38,13 @@ with open ('testlinks10.csv') as urls:
             day.send_keys('10')
             month.send_keys('April')
             year.send_keys('2000')
-            time.sleep(1)
+            time.sleep(5)
             link = driver.find_element_by_css_selector('a.btnv6_blue_hoverfade.btn_medium')
             link.click()
-            time.sleep(2)
             print('Age check passed')
         except:
             print('No age restriction')
+          
         time.sleep(3)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
@@ -113,7 +113,7 @@ with open ('testlinks10.csv') as urls:
             for i in range(1000):
                 actions.perform()
             downbutton = ''
-            time.sleep(1)
+            time.sleep(3)
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
         except: 
             update_count = ''
