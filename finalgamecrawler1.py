@@ -127,7 +127,7 @@ with open ('testlinks10.csv') as urls:
                 'number_recent_reviews': number_recent_reviews, 
                 'genre': genre,
                 'release_date': release_date, 
-                'tags': tags,# 'update_count': update_count
+                'tags': tags, 'update_count': update_count
                 }
         url_list.append(url)
         driver.quit()
