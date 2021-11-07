@@ -11,24 +11,24 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--window-size=1920x1080")
 chrome_options.add_argument("--window-position=0,0")
 chrome_options.add_argument("--incognito")
+chrome_options.add_argument("--disable-gpu")
 
  
 url_list=[]
 #getting all the urls
-with open ('testlinks10.csv') as urls:
+with open ('0a.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
         time.sleep(3)
         # asses webpage
         driver.get("https://"+url.rstrip())
-        driver.set_window_size(1920, 1080)
         driver.maximize_window()
-        time.sleep(5)
+        time.sleep(10)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(3)
+            time.sleep(2)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -36,19 +36,16 @@ with open ('testlinks10.csv') as urls:
             day = driver.find_element_by_id('ageDay')
             month = driver.find_element_by_id('ageMonth')
             year = driver.find_element_by_id('ageYear')
-            driver.maximize_window()
-            time.sleep(5)
             day.send_keys('10')
             month.send_keys('April')
             year.send_keys('2000')
-            time.sleep(5)
+            time.sleep(1)
             link = driver.find_element_by_css_selector('a.btnv6_blue_hoverfade.btn_medium')
             link.click()
-            time.sleep(2)
             print('Age check passed')
         except:
             print('No age restriction')
-        time.sleep(3)
+        time.sleep(2)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
@@ -105,23 +102,22 @@ with open ('testlinks10.csv') as urls:
             number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
-        time.sleep(5)
+        
         try:
-            link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
-            link2.click()
-            time.sleep(1) 
+            link3 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
+            link3.click()
+            time.sleep(3) 
             downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
             actions = ActionChains(driver)
             actions.click(downbutton)
-            time.sleep(1)
+            time.sleep(3)
             for i in range(1000):
                 actions.perform()
             downbutton = ''
-            time.sleep(3)
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
         except: 
             update_count = ''
-               
+          
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
                 'alltime_reviews_summary': alltime_reviews_summary, 
@@ -140,7 +136,6 @@ df = pd.DataFrame(url_list)
 #Save data
 df.to_csv('0a_games.csv', index = False, encoding='utf-8')
 print('Finished!')
-
 
 
     
