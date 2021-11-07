@@ -41,6 +41,7 @@ with open ('0a.csv') as urls:
             time.sleep(1)
             link = driver.find_element_by_css_selector('a.btnv6_blue_hoverfade.btn_medium')
             link.click()
+            time.sleep(2)
             print('Age check passed')
         except:
             print('No age restriction')
