@@ -116,8 +116,8 @@ with open ('testlinks10.csv') as urls:
             time.sleep(3)
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
         except: 
-            update_count = ''               
-               
+            update_count = ''  
+        time.sleep(3)               
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
                 'alltime_reviews_summary': alltime_reviews_summary, 
