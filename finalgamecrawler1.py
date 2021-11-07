@@ -103,20 +103,20 @@ with open ('testlinks10.csv') as urls:
         except: 
             number_alltime_reviews = ''
         driver.implicitly_wait(8)
-        try:
-            link3 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
-            link3.click()
-            time.sleep(3) 
-            downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
-            actions = ActionChains(driver)
-            actions.click(downbutton)
-            time.sleep(3)
-            for i in range(1000):
-                actions.perform()
-            downbutton = ''
-            update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
-        except: 
-            update_count = ''
+       # try:
+        link3 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
+        link3.click()
+        time.sleep(3) 
+        downbutton = driver.find_element_by_css_selector('div.apppartnereventspage_ScrollButton_1t_97.apppartnereventspage_Down_3VePR.apppartnereventspage_AnimIn_240i5')
+        actions = ActionChains(driver)
+        actions.click(downbutton)
+        time.sleep(3)
+        for i in range(1000):
+            actions.perform()
+        downbutton = ''
+        update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
+        #except: 
+            #update_count = ''
           
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
