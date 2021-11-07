@@ -15,7 +15,7 @@ chrome_options.add_argument("--incognito")
  
 url_list=[]
 #getting all the urls
-with open ('0a.csv') as urls:
+with open ('testlinks10.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
