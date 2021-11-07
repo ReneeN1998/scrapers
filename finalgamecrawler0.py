@@ -23,11 +23,11 @@ with open ('testlinks10.csv') as urls:
         # asses webpage
         driver.get("https://"+url.rstrip())
         driver.maximize_window()
-        time.sleep(1)
+        time.sleep(5)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(1)
+            time.sleep(3)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -41,6 +41,7 @@ with open ('testlinks10.csv') as urls:
             time.sleep(5)
             link = driver.find_element_by_css_selector('a.btnv6_blue_hoverfade.btn_medium')
             link.click()
+            time.sleep(5)
             print('Age check passed')
         except:
             print('No age restriction')
@@ -102,6 +103,7 @@ with open ('testlinks10.csv') as urls:
             number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
+        time.sleep(5)
         try:
             link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
             link2.click()
