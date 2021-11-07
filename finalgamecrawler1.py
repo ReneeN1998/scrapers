@@ -3,7 +3,6 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
@@ -16,7 +15,7 @@ chrome_options.add_argument("--incognito")
  
 url_list=[]
 #getting all the urls
-with open ('testlinks10.csv') as urls:
+with open ('1a.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
@@ -134,9 +133,6 @@ with open ('testlinks10.csv') as urls:
 df = pd.DataFrame(url_list)
 
 #Save data
-df.to_csv('first300games.csv', index = False, encoding='utf-8')
+df.to_csv('1a_games.csv', index = False, encoding='utf-8')
 print('Finished!')
 
-
-
-    
