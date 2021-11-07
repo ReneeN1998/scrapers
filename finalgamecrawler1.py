@@ -23,11 +23,11 @@ with open ('testlinks10.csv') as urls:
         # asses webpage
         driver.get("https://"+url.rstrip())
         driver.maximize_window()
-        time.sleep(5)
+        time.sleep(1)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(3)
+            time.sleep(1)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -44,7 +44,7 @@ with open ('testlinks10.csv') as urls:
             print('Age check passed')
         except:
             print('No age restriction')
-        time.sleep(3)
+        time.sleep(2)
         try: 
             title = driver.find_element_by_xpath('.//*[@id="appHubAppName"]').text
         except:
