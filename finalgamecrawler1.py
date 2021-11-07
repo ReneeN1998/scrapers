@@ -101,6 +101,7 @@ with open ('testlinks10.csv') as urls:
             number_alltime_reviews = driver.find_element_by_xpath('//*[@id="review_histogram_rollup_section"]/div[1]/div/span[2]').text
         except: 
             number_alltime_reviews = ''
+        time.sleep(2)
         try:
             time.sleep(2)
             link2 = driver.find_element_by_css_selector('div.partnereventwebrowembed_LatestUpdateButton_1TRFt')
@@ -118,6 +119,7 @@ with open ('testlinks10.csv') as urls:
             time.sleep(3)
         except: 
             update_count = ''
+        time.sleep(2)
                
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
