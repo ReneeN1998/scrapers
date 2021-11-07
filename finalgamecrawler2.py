@@ -23,11 +23,11 @@ with open ('2a.csv') as urls:
         # asses webpage
         driver.get("https://"+url.rstrip())
         driver.maximize_window()
-        time.sleep(1)
+        time.sleep(5)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(1)
+            time.sleep(2)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
@@ -40,6 +40,7 @@ with open ('2a.csv') as urls:
             year.send_keys('2000')
             time.sleep(1)
             link = driver.find_element_by_css_selector('a.btnv6_blue_hoverfade.btn_medium')
+            time.sleep(1)
             link.click()
             print('Age check passed')
         except:
@@ -116,6 +117,7 @@ with open ('2a.csv') as urls:
             update_count = len(driver.find_elements_by_css_selector('div.apppartnereventspage_PartnerEvent_1KsYS.partnereventdisplay_InLibraryView_3_SEi'))
         except: 
             update_count = ''
+        time.sleep(1)
                
         url = {'title': title, 'price1': price1, 'price2': price2, 'discountprice':discountprice,
                 'free': free,
