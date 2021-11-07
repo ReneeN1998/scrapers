@@ -23,11 +23,11 @@ with open ('1a.csv') as urls:
         # asses webpage
         driver.get("https://"+url.rstrip())
         driver.maximize_window()
-        time.sleep(1)
+        time.sleep(5)
         # accept cookies, if applicable
         try:
             driver.find_element_by_id('acceptAllButton').click()
-            time.sleep(1)
+            time.sleep(3)
         except:
             print('probably accepted the cookie already!')
         # Get through the agecheck
