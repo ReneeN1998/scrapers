@@ -134,5 +134,5 @@ with open ('1e.csv') as urls:
 df = pd.DataFrame(url_list)
 
 #Save data
-df.to_csv('1d_games.csv', index = False, encoding='utf-8')
+df.to_csv('1e_games.csv', index = False, encoding='utf-8')
 print('Finished!')
