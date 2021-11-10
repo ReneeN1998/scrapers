@@ -16,7 +16,7 @@ chrome_options.add_argument("--disable-gpu")
  
 url_list=[]
 #getting all the urls
-with open ('1d.csv') as urls:
+with open ('1e.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
