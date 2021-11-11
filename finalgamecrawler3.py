@@ -16,7 +16,7 @@ chrome_options.add_argument("--disable-gpu")
  
 url_list=[]
 #getting all the urls
-with open ('12a.csv') as urls:
+with open ('12b.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
@@ -134,5 +134,5 @@ with open ('12a.csv') as urls:
 df = pd.DataFrame(url_list)
 
 #Save data
-df.to_csv('12a_games.csv', index = False, encoding='utf-8')
+df.to_csv('12b_games.csv', index = False, encoding='utf-8')
 print('Finished!')
