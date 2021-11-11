@@ -7,7 +7,7 @@ chrome_options.add_argument("--headless")
 
 url_list=[]
 #getting all the urls
-with open ('8a_updates.csv') as urls:
+with open ('testupdates.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome(options=chrome_options)
@@ -51,7 +51,7 @@ with open ('8a_updates.csv') as urls:
 df = pd.DataFrame(url_list)
 
 #Save data
-df.to_csv('8a_updatesdata.csv', index = False, encoding='utf-8')
+df.to_csv('testupdatesdata.csv', index = False, encoding='utf-8')
 print('Finished!')
 
 
