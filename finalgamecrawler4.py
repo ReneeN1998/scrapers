@@ -4,19 +4,17 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
-chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--window-size=1920x1080")
 chrome_options.add_argument("--window-position=0,0")
-chrome_options.add_argument("--incognito")
-chrome_options.add_argument("--disable-gpu")
+
 
  
 url_list=[]
 #getting all the urls
-with open ('13e.csv') as urls:
+with open ('11cb.csv') as urls:
     for url in urls:
         # create driver object
         driver = webdriver.Chrome("/home/test/chromedriver",options=chrome_options)
@@ -134,5 +132,5 @@ with open ('13e.csv') as urls:
 df = pd.DataFrame(url_list)
 
 #Save data
-df.to_csv('13e_games.csv', index = False, encoding='utf-8')
+df.to_csv('11cb_games.csv', index = False, encoding='utf-8')
 print('Finished!')
